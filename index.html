@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>UrbanWeb</title>
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family: 'Segoe UI', sans-serif;
+}
+
+body{
+background: linear-gradient(135deg,#050816,#0a0f2c);
+color:white;
+padding:20px;
+}
+
+/* TÍTULO PRINCIPAL */
+header{
+text-align:center;
+margin-bottom:40px;
+}
+
+header img{
+width:120px;
+margin-bottom:15px;
+filter: drop-shadow(0 0 15px #00f7ff);
+}
+
+header h1{
+font-size:38px;
+color:#00f7ff;
+text-shadow:0 0 20px #00f7ff;
+animation: glow 2s infinite alternate;
+}
+
+@keyframes glow{
+from{ text-shadow:0 0 10px #00f7ff;}
+to{ text-shadow:0 0 25px #00f7ff;}
+}
+
+/* SECCIONES TIPO INSTAGRAM */
+.section{
+background:#0e163a;
+margin-bottom:20px;
+border-radius:20px;
+overflow:hidden;
+box-shadow:0 0 25px rgba(0,255,255,0.15);
+transition:0.3s;
+}
+
+.section-header{
+padding:22px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+cursor:pointer;
+font-size:22px;
+font-weight:bold;
+color:#00f7ff;
+}
+
+.section-header:hover{
+background:#141f50;
+}
+
+.plus{
+font-size:26px;
+transition:0.3s;
+}
+
+.section-content{
+max-height:0;
+overflow:hidden;
+transition:0.5s ease;
+padding:0 22px;
+}
+
+.section-content p{
+padding-bottom:20px;
+color:#ccc;
+line-height:1.6;
+}
+
+/* BOTONES */
+.button{
+display:inline-block;
+margin-top:15px;
+padding:12px 22px;
+background:#00f7ff;
+color:#000;
+border-radius:30px;
+text-decoration:none;
+font-weight:bold;
+transition:0.3s;
+}
+
+.button:hover{
+background:#00c8d4;
+transform:scale(1.05);
+}
+
+/* FORMULARIO */
+form{
+display:flex;
+flex-direction:column;
+gap:15px;
+padding-bottom:20px;
+}
+
+input, textarea{
+padding:14px;
+border:none;
+border-radius:12px;
+background:#1c255c;
+color:white;
+}
+
+textarea{
+resize:none;
+height:100px;
+}
+
+input:focus, textarea:focus{
+outline:2px solid #00f7ff;
+}
+
+.submit-btn{
+background:#00f7ff;
+border:none;
+padding:14px;
+border-radius:30px;
+font-weight:bold;
+cursor:pointer;
+transition:0.3s;
+}
+
+.submit-btn:hover{
+background:#00c8d4;
+transform:scale(1.05);
+}
+
+/* FOOTER */
+footer{
+margin-top:40px;
+text-align:center;
+color:#aaa;
+font-size:14px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<img src="logo.png" alt="UrbanWeb Logo">
+<h1>UrbanWeb</h1>
+<p>Diseño web moderno con estilo urbano </p>
+</header>
+
+<!-- QUE HACEMOS -->
+<div class="section">
+<div class="section-header" onclick="toggleSection(this)">
+¿Qué hacemos en UrbanWeb?
+<span class="plus">+</span>
+</div>
+<div class="section-content">
+<p>
+Creamos páginas web modernas, rápidas y visualmente atractivas.
+Diseñamos sitios personalizados para negocios, emprendimientos,
+jugadores, y marcas personales.
+</p>
+
+<a href="https://game-studio-lite.netlify.app/" 
+   target="_blank" 
+   class="button">
+   Ver ejemplos
+</a>
+
+</div>
+</div>
+
+<!-- COMO TRABAJAMOS -->
+<div class="section">
+<div class="section-header" onclick="toggleSection(this)">
+¿Cómo trabajamos?
+<span class="plus">+</span>
+</div>
+<div class="section-content">
+<p>
+1️⃣ Escuchamos tu idea<br>
+2️⃣ Diseñamos una propuesta moderna<br>
+3️⃣ Ajustamos detalles contigo<br>
+4️⃣se la enviamos o la subimos por usted
+</p>
+</div>
+</div>
+
+<!-- SERVICIOS -->
+<div class="section">
+<div class="section-header" onclick="toggleSection(this)">
+Servicios
+<span class="plus">+</span>
+</div>
+<div class="section-content">
+<p>
+✔️ Landing Pages<br>
+✔️ Páginas para negocios<br>
+✔️ Portfolios personales<br>
+✔️ Tiendas simples<br>
+✔️ Optimización y rediseño web
+</p>
+</div>
+</div>
+
+<!-- CONTACTAR -->
+<div class="section">
+<div class="section-header" onclick="toggleSection(this)">
+Contactar
+<span class="plus">+</span>
+</div>
+<div class="section-content">
+
+<form action="https://formsubmit.co/urbanwebs1@gmail.com" method="POST">
+<input type="text" name="nombre" placeholder="Tu nombre" required>
+<input type="email" name="email" placeholder="Tu correo" required>
+<textarea name="mensaje" placeholder="Escribe tu mensaje..." required></textarea>
+
+<input type="hidden" name="_captcha" value="false">
+
+<button type="submit" class="submit-btn">Enviar mensaje</button>
+</form>
+
+</div>
+</div>
+
+<!-- CONTACTO DIRECTO -->
+<div class="section">
+<div class="section-header" onclick="toggleSection(this)">
+Contacto directo
+<span class="plus">+</span>
+</div>
+<div class="section-content">
+<p>
+📩 Email:urbanwebs1@gmail.com
+</p>
+</div>
+</div>
+
+<footer>
+© 2026 UrbanWeb
+</footer>
+
+<script>
+function toggleSection(element){
+let content = element.nextElementSibling;
+let plus = element.querySelector(".plus");
+
+if(content.style.maxHeight){
+content.style.maxHeight = null;
+plus.textContent = "+";
+} else {
+content.style.maxHeight = content.scrollHeight + "px";
+plus.textContent = "−";
+}
+}
+</script>
+
+</body>
+</html>
+
+
